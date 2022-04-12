@@ -1,0 +1,95 @@
+#include <iostream>
+#include <cmath>
+#include <string>
+
+/*Start declare variables here*/
+std::string name;
+std::string favgame;
+int age;
+std::string gam_desc;
+std::string money_ask;
+float money_am;
+std::string spend;
+float option1 = 13.99;
+float option2 = 9.99;
+float option3 = 10.99;
+std::string shoping;
+float tax1 = 12.6;
+float tax2 = 3.35;
+float tax3 = 6.73;
+/*Stop declaring variables here*/
+
+int main() {
+    std::cout << "Hello, my name is Bob whats yours? ";
+    std::cin >> name;
+    std::cin.ignore();
+    std::cout << "Hi " << name << " How old are you? ";
+    std::cin >> age;
+    std::cin.ignore();
+    std::cout << age << "? " << "Wow... " << " Anyway whats your favortie game? ";
+    getline(std::cin, favgame);
+    std::cin.ignore();
+    std::cout << favgame << "?" << " Never heard of it, might try it out one day. Tell me more about it. ";
+    getline(std::cin, gam_desc);
+    std::cin.ignore();
+    std::cout << favgame << " sounds fun," << " might play it sometime" << std::endl;
+    std::cout << "Hey Would you like some money? (y/n) ";
+    std::cin >> money_ask;
+    std::cin.ignore();
+    if (money_ask == "y" || money_ask == "Y" || money_ask == "yes" || money_ask == "Yes") {
+        std::cout << "How much money would you like to have?? ";
+        std::cin >> money_am;
+        std::cin.ignore();
+        std::cout << "Okay you may have " << money_am << " dollars \n";
+        std::cout << "\"You resive " << money_am << " dollars from Bob\"." << std::endl;
+        std::cout << "Wanna go shoping? (y/n) ";
+        std::cin >> shoping;
+        std::cin.ignore();
+        if (shoping == "y" || shoping == "Y" || shoping == "yes" || shoping == "Yes") {
+            std::cout << "\nWhat do you want to buy?\n(tax included)\n " << std::endl;
+            std::cout << "1. Cool Hoodie " << option1 << std::endl;
+            std::cout << "2. Light up sunglasses " << option2 << std::endl;
+            std::cout << "3. Band t-shirt " << option3 << std::endl;
+            std::cin >> spend;
+            std::cin.ignore();
+            if (spend == "1") {
+                if (money_am > option1 || money_am == option1) {
+                    (option1 + tax1);
+                    std::cout << "Cool, now you have a Cool Hoodie!" << std::endl;
+                    std::cout << "\"You have (" << money_am - option1 - tax1 << ") dollars left\". " << std::endl;
+                    if (money_am < 0) {
+                        std::cout << "Well now your broke.";
+                    }
+                    else {
+                        std::cout << "Come back next time but put the same amount thats left";
+                    }
+                }
+            }
+            if (spend == "2") {
+                (option2 + tax2);
+                std::cout << "Cool, now you have Light up sunglasses" << std::endl;
+                std::cout << "\"You have (" << money_am - option2 - tax2 << ") dollars left\"" << std::endl;
+                if (money_am < 0) {
+                    std::cout << "Well now your broke.";
+                }
+                else {
+                    std::cout << "Come back next time but put the same amount thats left";
+                }
+            }
+            if (spend == "3") {
+                (option3 + tax3);
+                std::cout << "Cool, now you have a Band t-shirt" << std::endl;
+                std::cout << "\"You have (" << money_am - option3 - tax3 << ") dollars left\"" << std::endl;
+                if (money_am < 0) {
+                    std::cout << "Well now your broke.";
+                }
+                else {
+                    std::cout << "Come back next time but put the same amount thats left";
+                }
+            }
+        }
+    }
+    else {
+        std::cout << "Invalid Answer \n";
+    }
+}
