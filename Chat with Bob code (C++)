@@ -3,7 +3,7 @@
 #include <string>
 #include  <stdlib.h>
 
-/*Start declare variables here*/
+/*Start declaring variables here*/
 std::string name;
 std::string favgame;
 int age;
