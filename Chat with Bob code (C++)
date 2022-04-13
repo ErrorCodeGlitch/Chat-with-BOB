@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cmath>
 #include <string>
+#include  <stdlib.h>
 
 /*Start declare variables here*/
 std::string name;
@@ -8,15 +9,15 @@ std::string favgame;
 int age;
 std::string gam_desc;
 std::string money_ask;
-float money_am;
+double money_am;
 std::string spend;
-float option1 = 13.99;
-float option2 = 9.99;
-float option3 = 10.99;
-std::string shoping;
-float tax1 = 12.6;
-float tax2 = 3.35;
-float tax3 = 6.73;
+double option1 = 13.99;
+double option2 = 9.99;
+double option3 = 10.99;
+std::string shopping;
+double tax1 = 12.6;
+double tax2 = 3.35;
+double tax3 = 6.73;
 /*Stop declaring variables here*/
 
 int main() {
@@ -36,16 +37,24 @@ int main() {
     std::cout << "Hey Would you like some money? (y/n) ";
     std::cin >> money_ask;
     std::cin.ignore();
+    if (money_ask == "n" || money_ask == "N" || money_ask == "No" || money_ask == "no") {
+        std::cout << "Okay, goodbye";
+        exit(3);
+    }
     if (money_ask == "y" || money_ask == "Y" || money_ask == "yes" || money_ask == "Yes") {
         std::cout << "How much money would you like to have?? ";
         std::cin >> money_am;
         std::cin.ignore();
         std::cout << "Okay you may have " << money_am << " dollars \n";
-        std::cout << "\"You resive " << money_am << " dollars from Bob\"." << std::endl;
-        std::cout << "Wanna go shoping? (y/n) ";
-        std::cin >> shoping;
+        std::cout << "\"You receive " << money_am << " dollars from Bob\"." << std::endl;
+        std::cout << "Wanna go shopping? (y/n) ";
+        std::cin >> shopping;
         std::cin.ignore();
-        if (shoping == "y" || shoping == "Y" || shoping == "yes" || shoping == "Yes") {
+        if (shopping == "n" || shopping == "N" || shopping == "No" || shopping == "no") {
+            std::cout << "Okay, goodbye";
+            exit(3);
+        }
+        if (shopping == "y" || shopping == "Y" || shopping == "yes" || shopping == "Yes") {
             std::cout << "\nWhat do you want to buy?\n(tax included)\n " << std::endl;
             std::cout << "1. Cool Hoodie " << option1 << std::endl;
             std::cout << "2. Light up sunglasses " << option2 << std::endl;
@@ -56,13 +65,14 @@ int main() {
                 if (money_am > option1 || money_am == option1) {
                     (option1 + tax1);
                     std::cout << "Cool, now you have a Cool Hoodie!" << std::endl;
-                    std::cout << "\"You have (" << money_am - option1 - tax1 << ") dollars left\". " << std::endl;
+                    std::cout << "\"You have (" << money_am - option1 << ") dollars left\". " << std::endl;
                     if (money_am < 0) {
                         std::cout << "Well now your broke.";
-                    } else {
+                    }
+                    else {
                         std::cout << "Come back next time but put the same amount thats left";
                     }
-                    
+
                     if (money_am < option1) {
                         std::cout << "You don't have enough";
                     }
@@ -72,10 +82,11 @@ int main() {
                 if (money_am > option2 || money_am == option2) {
                     (option2 + tax2);
                     std::cout << "Cool, now you have Light up sunglasses" << std::endl;
-                    std::cout << "\"You have (" << money_am - option2 - tax2 << ") dollars left\"" << std::endl;
+                    std::cout << "\"You have (" << money_am - option2 << ") dollars left\"" << std::endl;
                     if (money_am < 0) {
                         std::cout << "Well now your broke.";
-                    } else {
+                    }
+                    else {
                         std::cout << "Come back next time but put the same amount thats left";
                     }
                     if (money_am < option2) {
@@ -87,10 +98,11 @@ int main() {
                 if (money_am >= option3) {
                     (option3 + tax3);
                     std::cout << "Cool, now you have a Band t-shirt" << std::endl;
-                    std::cout << "\"You have (" << money_am - option3 - tax3 << ") dollars left\"" << std::endl;
+                    std::cout << "\"You have (" << money_am - option3 << ") dollars left\"" << std::endl;
                     if (money_am < 0) {
                         std::cout << "Well now your broke.";
-                    } else {
+                    }
+                    else {
                         std::cout << "Come back next time but put the same amount thats left";
                     }
                 }
@@ -98,24 +110,11 @@ int main() {
                     std::cout << "You don't have enough";
                 }
             }
-        } 
-        
+        } else {
+            std::cout << "\nInvalid Answer \n";
+        }
     } else {
-        std::cout << "Invalid Answer \n";
+        std::cout << "\nInvalid Answer \n";
     }
-    if (shoping == "n" || shoping == "N" || shoping == "No" || shoping == "no") {
-
-    }
-    if (shoping.find("!") || shoping.find("@") || shoping.find("#") || shoping.find("$") || shoping.find("%") || shoping.find("^") || shoping.find("&") || shoping.find("*") || shoping.find("(") || shoping.find(")") || shoping.find("~") || shoping.find("`") || shoping.find("\"") || shoping.find("\\") || shoping.find("/") || shoping.find("|") || shoping.find("\'") || shoping.find("[") || shoping.find("]") || shoping.find("{") || shoping.find("}") || shoping.find("?") || shoping.find(".") || shoping.find(",") || shoping.find(":") || shoping.find(";") || shoping.find(">") || shoping.find("<") || shoping.find("-") || shoping.find("_") || shoping.find("+") || shoping.find("=")) {
-        std::cout << "Special Characters are not allowed! Try again but without them.";
-    }
-    if (spend.find("!") || spend.find("@") || spend.find("#") || spend.find("$") || spend.find("%") || spend.find("^") || spend.find("&") || spend.find("*") || spend.find("(") || spend.find(")") || spend.find("~") || spend.find("`") || spend.find("\"") || spend.find("\\") || spend.find("/") || spend.find("|") || spend.find("\'") || spend.find("[") || spend.find("]") || spend.find("{") || spend.find("}") || spend.find("?") || spend.find(".") || spend.find(",") || spend.find(":") || spend.find(";") || spend.find(">") || spend.find("<") || spend.find("-") || spend.find("_") || spend.find("+") || spend.find("=")) {
-        std::cout << "Special Characters are not allowed! Try again but without them.";
-    }
-    if (money_ask.find("!") || money_ask.find("@") || money_ask.find("#") || money_ask.find("$") || money_ask.find("%") || money_ask.find("^") || money_ask.find("&") || money_ask.find("*") || money_ask.find("(") || money_ask.find(")") || money_ask.find("~") || money_ask.find("`") || money_ask.find("\"") || money_ask.find("\\") || money_ask.find("/") || money_ask.find("|") || money_ask.find("\'") || money_ask.find("[") || money_ask.find("]") || money_ask.find("{") || money_ask.find("}") || money_ask.find("?") || money_ask.find(".") || money_ask.find(",") || money_ask.find(":") || money_ask.find(";") || money_ask.find(">") || money_ask.find("<") || money_ask.find("-") || money_ask.find("_") || money_ask.find("+") || money_ask.find("=")) {
-        std::cout << "Special Characters are not allowed! Try again but without them.";
-    }
-    if (age > 100) {
-        std::cout << "No way your that old. -_- Try again.";
-    }
+   
 }
