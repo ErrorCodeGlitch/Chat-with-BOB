@@ -59,34 +59,47 @@ int main() {
                     std::cout << "\"You have (" << money_am - option1 - tax1 << ") dollars left\". " << std::endl;
                     if (money_am < 0) {
                         std::cout << "Well now your broke.";
-                    }
-                    else {
+                    } else {
                         std::cout << "Come back next time but put the same amount thats left";
+                    }
+                    
+                    if (money_am < option1) {
+                        std::cout << "You don't have enough";
                     }
                 }
             }
             if (spend == "2") {
-                (option2 + tax2);
-                std::cout << "Cool, now you have Light up sunglasses" << std::endl;
-                std::cout << "\"You have (" << money_am - option2 - tax2 << ") dollars left\"" << std::endl;
-                if (money_am < 0) {
-                    std::cout << "Well now your broke.";
-                }
-                else {
-                    std::cout << "Come back next time but put the same amount thats left";
+                if (money_am > option2 || money_am == option2) {
+                    (option2 + tax2);
+                    std::cout << "Cool, now you have Light up sunglasses" << std::endl;
+                    std::cout << "\"You have (" << money_am - option2 - tax2 << ") dollars left\"" << std::endl;
+                    if (money_am < 0) {
+                        std::cout << "Well now your broke.";
+                    } else {
+                        std::cout << "Come back next time but put the same amount thats left";
+                    }
+                    if (money_am < option2) {
+                        std::cout << "You don't have enough";
+                    }
                 }
             }
             if (spend == "3") {
-                (option3 + tax3);
-                std::cout << "Cool, now you have a Band t-shirt" << std::endl;
-                std::cout << "\"You have (" << money_am - option3 - tax3 << ") dollars left\"" << std::endl;
-                if (money_am < 0) {
-                    std::cout << "Well now your broke.";
-                } else {
-                    std::cout << "Come back next time but put the same amount thats left";
+                if (money_am >= option3) {
+                    (option3 + tax3);
+                    std::cout << "Cool, now you have a Band t-shirt" << std::endl;
+                    std::cout << "\"You have (" << money_am - option3 - tax3 << ") dollars left\"" << std::endl;
+                    if (money_am < 0) {
+                        std::cout << "Well now your broke.";
+                    } else {
+                        std::cout << "Come back next time but put the same amount thats left";
+                    }
+                }
+                if (money_am < option3) {
+                    std::cout << "You don't have enough";
                 }
             }
-        }
+        } 
+        
     } else {
         std::cout << "Invalid Answer \n";
     }
