@@ -82,14 +82,27 @@ int main() {
                 std::cout << "\"You have (" << money_am - option3 - tax3 << ") dollars left\"" << std::endl;
                 if (money_am < 0) {
                     std::cout << "Well now your broke.";
-                }
-                else {
+                } else {
                     std::cout << "Come back next time but put the same amount thats left";
                 }
             }
         }
-    }
-    else {
+    } else {
         std::cout << "Invalid Answer \n";
+    }
+    if (shoping == "n" || shoping == "N" || shoping == "No" || shoping == "no") {
+
+    }
+    if (shoping.find("!") || shoping.find("@") || shoping.find("#") || shoping.find("$") || shoping.find("%") || shoping.find("^") || shoping.find("&") || shoping.find("*") || shoping.find("(") || shoping.find(")") || shoping.find("~") || shoping.find("`") || shoping.find("\"") || shoping.find("\\") || shoping.find("/") || shoping.find("|") || shoping.find("\'") || shoping.find("[") || shoping.find("]") || shoping.find("{") || shoping.find("}") || shoping.find("?") || shoping.find(".") || shoping.find(",") || shoping.find(":") || shoping.find(";") || shoping.find(">") || shoping.find("<") || shoping.find("-") || shoping.find("_") || shoping.find("+") || shoping.find("=")) {
+        std::cout << "Special Characters are not allowed! Try again but without them.";
+    }
+    if (spend.find("!") || spend.find("@") || spend.find("#") || spend.find("$") || spend.find("%") || spend.find("^") || spend.find("&") || spend.find("*") || spend.find("(") || spend.find(")") || spend.find("~") || spend.find("`") || spend.find("\"") || spend.find("\\") || spend.find("/") || spend.find("|") || spend.find("\'") || spend.find("[") || spend.find("]") || spend.find("{") || spend.find("}") || spend.find("?") || spend.find(".") || spend.find(",") || spend.find(":") || spend.find(";") || spend.find(">") || spend.find("<") || spend.find("-") || spend.find("_") || spend.find("+") || spend.find("=")) {
+        std::cout << "Special Characters are not allowed! Try again but without them.";
+    }
+    if (money_ask.find("!") || money_ask.find("@") || money_ask.find("#") || money_ask.find("$") || money_ask.find("%") || money_ask.find("^") || money_ask.find("&") || money_ask.find("*") || money_ask.find("(") || money_ask.find(")") || money_ask.find("~") || money_ask.find("`") || money_ask.find("\"") || money_ask.find("\\") || money_ask.find("/") || money_ask.find("|") || money_ask.find("\'") || money_ask.find("[") || money_ask.find("]") || money_ask.find("{") || money_ask.find("}") || money_ask.find("?") || money_ask.find(".") || money_ask.find(",") || money_ask.find(":") || money_ask.find(";") || money_ask.find(">") || money_ask.find("<") || money_ask.find("-") || money_ask.find("_") || money_ask.find("+") || money_ask.find("=")) {
+        std::cout << "Special Characters are not allowed! Try again but without them.";
+    }
+    if (age > 100) {
+        std::cout << "No way your that old. -_- Try again.";
     }
 }
