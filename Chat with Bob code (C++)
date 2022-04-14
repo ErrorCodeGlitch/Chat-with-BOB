@@ -3,21 +3,21 @@
 #include <string>
 #include  <stdlib.h>
 
-/*Start declaring variables here*/
+/*Start declare variables here*/
 std::string name;
 std::string favgame;
 int age;
 std::string gam_desc;
 std::string money_ask;
-double money_am;
+float money_am;
 std::string spend;
-double option1 = 13.99;
-double option2 = 9.99;
-double option3 = 10.99;
+float option1 = 13.99;
+float option2 = 9.99;
+float option3 = 10.99;
 std::string shopping;
-double tax1 = 12.6;
-double tax2 = 3.35;
-double tax3 = 6.73;
+float tax1 = 12.6;
+float tax2 = 3.35;
+float tax3 = 6.73;
 /*Stop declaring variables here*/
 
 int main() {
@@ -65,16 +65,19 @@ int main() {
                 if (money_am > option1 || money_am == option1) {
                     (option1 + tax1);
                     std::cout << "Cool, now you have a Cool Hoodie!" << std::endl;
-                    std::cout << "\"You have (" << money_am - option1 << ") dollars left\". " << std::endl;
+                    std::cout << "\"You have (" << money_am - option1 - tax1 << ") dollars left\". " << std::endl;
                     if (money_am < 0) {
                         std::cout << "Well now your broke.";
+                        exit(3);
                     }
                     else {
                         std::cout << "Come back next time but put the same amount thats left";
+                        exit(3);
                     }
 
                     if (money_am < option1) {
                         std::cout << "You don't have enough";
+                        exit(3);
                     }
                 }
             }
@@ -82,15 +85,17 @@ int main() {
                 if (money_am > option2 || money_am == option2) {
                     (option2 + tax2);
                     std::cout << "Cool, now you have Light up sunglasses" << std::endl;
-                    std::cout << "\"You have (" << money_am - option2 << ") dollars left\"" << std::endl;
+                    std::cout << "\"You have (" << money_am - option2 - tax2 << ") dollars left\"" << std::endl;
                     if (money_am < 0) {
                         std::cout << "Well now your broke.";
                     }
                     else {
                         std::cout << "Come back next time but put the same amount thats left";
+                        exit(3);
                     }
                     if (money_am < option2) {
                         std::cout << "You don't have enough";
+                        exit(3);
                     }
                 }
             }
@@ -98,23 +103,30 @@ int main() {
                 if (money_am >= option3) {
                     (option3 + tax3);
                     std::cout << "Cool, now you have a Band t-shirt" << std::endl;
-                    std::cout << "\"You have (" << money_am - option3 << ") dollars left\"" << std::endl;
+                    std::cout << "\"You have (" << money_am - option3 - tax3 << ") dollars left\"" << std::endl;
                     if (money_am < 0) {
                         std::cout << "Well now your broke.";
+                        exit(3);
                     }
                     else {
                         std::cout << "Come back next time but put the same amount thats left";
+                        exit(3);
                     }
                 }
                 if (money_am < option3) {
                     std::cout << "You don't have enough";
+                    exit(3);
                 }
             }
-        } else {
-            std::cout << "\nInvalid Answer \n";
         }
-    } else {
-        std::cout << "\nInvalid Answer \n";
+        else {
+            std::cout << "\nInvalid Answer \n";
+            exit(3);
+        }
     }
-   
+    else {
+        std::cout << "\nInvalid Answer \n";
+        exit(3);
+    }
+
 }
