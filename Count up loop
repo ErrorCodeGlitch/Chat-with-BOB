@@ -1,0 +1,11 @@
+#include <iostream>
+
+int main()
+{
+	bool forev = true;
+
+	for ( int i = 0; forev == true; i++)
+	{
+		std::cout << i << std::endl;
+	}
+}
