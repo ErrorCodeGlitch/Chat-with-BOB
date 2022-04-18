@@ -1,0 +1,45 @@
+#include <iostream>
+#include <cmath>
+
+void add(double an1, double an2) {
+	std::cout << std::endl << an1 + an2 << std::endl;
+}
+
+void subtract(double an1, double an2) {
+	std::cout << std::endl << an1 - an2 << std::endl;
+}
+
+void multiply(double an1, double an2) {
+	std::cout << std::endl << an1 * an2 << std::endl;
+}
+
+void divide(double an1, double an2) {
+	std::cout << std::endl << an1 / an2 << std::endl;
+}
+
+int main() {
+	std::cout << "Welcome to Karl's \"Simple Calculator\"" << std::endl;
+	std::cout << "Enter the first number: ";
+	double q1;
+	std::cin >> q1;
+	std::cin.ignore();
+	std::cout << "Choose the operation\n\n+ -> Addition\n- -> Subtraction\n* -> Multiplication\n/ -> Division\n";
+	char op;
+	std::cin >> op;
+	std::cin.ignore();
+	std::cout << "What is the second number: ";
+	double q2;
+	std::cin >> q2;
+	std::cin.ignore();
+	if (op == '+') {
+		add(q1, q2);
+	} else if (op == '-') {
+		subtract(q1, q2);
+	}else if (op == '/') {
+		divide(q1, q2);
+	}else if (op == '*') {
+		multiply(q1, q2);
+	}
+	
+	
+}
